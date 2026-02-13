@@ -4,3 +4,12 @@ Você decidiu comprar o novo iPhone 17 na Amazon, mas precisa garantir que a com
 - O saldo no cartão deve ser validado antes de confirmar.
 - Se o frete for grátis, selecione-o; caso contrário, avalie o prazo.
 
+Escrever o passo a passo:
+1- Verificar se o vendedor é "Amazon"ou "Loja Oficial Apple". 
+2- Se for igual, continue. Senão volte ao passo 1.
+3- Verificar o valor. 
+4- Se o valor for igual ou menor que o saldo dispinível para a compra, continue. Senão, volte ao passo 3. 
+5- Verificar o frete.
+6- Se o frete for "grátis" selecione-o. Senão, verificar o prazo de entrega. 
+7- Se o prazo de entrega for menor ou igual a 7 dias, selecione. Senão, volte ao passo 5°.
+
