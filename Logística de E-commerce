@@ -13,3 +13,58 @@ Escrever o passo a passo:
 6- Se o frete for "grátis" selecione-o. Senão, verificar o prazo de entrega. 
 7- Se o prazo de entrega for menor ou igual a 7 dias, selecione. Senão, volte ao passo 5°.
 
+Escreva em pseudocódigo:
+
+INÍCIO
+
+    vendedorValido ← FALSO
+
+    // Verificar vendedor
+    ENQUANTO vendedorValido = FALSO FAÇA
+        vendedor ← verificarVendedor()
+
+        SE vendedor = "Amazon" OU vendedor = "Loja Oficial Apple" ENTÃO
+            vendedorValido ← VERDADEIRO
+        SENÃO
+            mostrar("Vendedor inválido. Verifique novamente.")
+        FIMSE
+    FIMENQUANTO
+
+
+    valorValido ← FALSO
+
+    // Verificar valor do produto
+    ENQUANTO valorValido = FALSO FAÇA
+        valor ← verificarValor()
+        saldo ← verificarSaldo()
+
+        SE valor <= saldo ENTÃO
+            valorValido ← VERDADEIRO
+        SENÃO
+            mostrar("Saldo insuficiente. Verifique outro valor.")
+        FIMSE
+    FIMENQUANTO
+
+
+    freteSelecionado ← FALSO
+
+    // Verificar frete
+    ENQUANTO freteSelecionado = FALSO FAÇA
+        frete ← verificarFrete()
+
+        SE frete = "grátis" ENTÃO
+            selecionarFrete(frete)
+            freteSelecionado ← VERDADEIRO
+        SENÃO
+            prazo ← verificarPrazoEntrega()
+
+            SE prazo <= 7 dias ENTÃO
+                selecionarFrete(frete)
+                freteSelecionado ← VERDADEIRO
+            SENÃO
+                mostrar("Prazo muito longo. Verificando outro frete...")
+            FIMSE
+        FIMSE
+    FIMENQUANTO
+
+FIM
