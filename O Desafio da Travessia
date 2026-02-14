@@ -23,3 +23,36 @@ Escrever o passo a passo:
 17- Retire a ovelha de dentro do barco.
 
 Transformar em pseudocódigo:
+
+INÍCIO
+
+    // Travessia da ovelha
+    colocarNoBarco("ovelha")
+    atravessarRio()
+    retirarDoBarco("ovelha")
+
+    atravessarRio()
+
+    // Travessia do lobo
+    colocarNoBarco("lobo")
+    atravessarRio()
+    retirarDoBarco("lobo")
+
+    // Buscar a ovelha novamente
+    colocarNoBarco("ovelha")
+    atravessarRio()
+    retirarDoBarco("ovelha")
+
+    // Travessia da couve
+    colocarNoBarco("couve")
+    atravessarRio()
+    retirarDoBarco("couve")
+
+    atravessarRio()
+
+    // Levar a ovelha por último
+    colocarNoBarco("ovelha")
+    atravessarRio()
+    retirarDoBarco("ovelha")
+
+FIM
