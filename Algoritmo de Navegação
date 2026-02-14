@@ -4,3 +4,93 @@ Você está em sua localização atual e precisa chegar à Estação de Metrô N
 - Se estiver chovendo, utilize um transporte por aplicativo.
 - O algoritmo só termina quando você atravessar a catraca da estação.
 
+Escrever o passo a passo:
+1- Verifique se a partir da localização "Rua Santa Rita 246, Água Branca, Contagem - MG" quantos quilometros são até o destino "Via Expressa de Contagem, 1839 - Conj. Agua Branca, Contagem - MG, 32370-485". Se for menor que 1km de distância, sugira o caminho a pé. Senão, sugira um meio de transporte.
+2- Verifique a previsão do tempo, se estiver chovendo opte por um carro de aplicativo. Senão escolha a opção de transporte público.
+3- Senão estiver chovendo, vrifique os horários do onibus, se a previsão estiver igual ou menor que 5 minutos, verifique o horário de partida do próximo ônbus. Se a previsão de passagem estiver maior que 5 minutos vá até o ponto.
+4- Siga em direção a Rua Nossa Senhora de Fátima, vire a esquerda na Rua Nossa Senhora de Fátima e Vire à esquerda na Rua são José.
+5- Embarque no ônibus 1220, pague a passagem, sente-se caso haja lugar. Senão mantenha-se em pé.
+6- Desça após 8 paradas, na Rua Batista Sampaio, 231.
+6- Siga em direção  a Rua Nossa Senhora do Carmo e vire à direita na Via Expressa de Contagem.
+7- Cruze a estrada, o destino estará à direita. 
+8- Entre na estação, vá até a bilheteria, compre seu ticket ou recarre seu cartão.
+9- Vá em direção à catraca, faça o pagamento, e entre em direção a linha de trem.
+
+Portugol (pseudocódigo):
+
+INÍCIO
+
+// Definir endereços
+origem ← "Rua Santa Rita 246, Água Branca, Contagem - MG"
+destino ← "Via Expressa de Contagem, 1839 - Conj. Agua Branca, Contagem - MG, 32370-485"
+
+// 1. Verificar distância
+distancia ← calcularDistancia(origem, destino)
+
+SE distancia < 1 km ENTÃO
+    exibir("Sugestão: Ir a pé até o destino.")
+SENÃO
+    exibir("Sugestão: Utilizar meio de transporte.")
+
+    // 2. Verificar previsão do tempo
+    clima ← verificarPrevisaoTempo()
+
+    SE clima = "chovendo" ENTÃO
+        exibir("Solicitar carro de aplicativo.")
+    SENÃO
+        exibir("Utilizar transporte público.")
+
+        // 3. Verificar tempo de chegada do ônibus
+        tempo_onibus ← verificarPrevisaoOnibus()
+
+        SE tempo_onibus ≤ 5 minutos ENTÃO
+            horario_proximo ← verificarHorarioProximoOnibus()
+            exibir("Próximo ônibus sai às: ", horario_proximo)
+        SENÃO
+            exibir("Dirigir-se até o ponto de ônibus.")
+        FIMSE
+
+        // 4. Trajeto até o ponto
+        seguir("Em direção à Rua Nossa Senhora de Fátima")
+        virar("Esquerda na Rua Nossa Senhora de Fátima")
+        virar("Esquerda na Rua São José")
+
+        // 5. Embarque
+        embarcar("Ônibus 1220")
+        pagarPassagem()
+
+        SE assentoDisponivel = VERDADEIRO ENTÃO
+            sentar()
+        SENÃO
+            permanecerEmPe()
+        FIMSE
+
+        // 6. Desembarque
+        descerApos(8 paradas)
+        localDesembarque ← "Rua Batista Sampaio, 231"
+
+        // 7. Caminhada até destino
+        seguir("Em direção à Rua Nossa Senhora do Carmo")
+        virar("Direita na Via Expressa de Contagem")
+        cruzarEstrada()
+        exibir("Destino estará à direita.")
+
+        // 8. Entrada na estação
+        entrarEstacao()
+        irPara("Bilheteria")
+
+        SE possuiCartao = VERDADEIRO ENTÃO
+            recarregarCartao()
+        SENÃO
+            comprarTicket()
+        FIMSE
+
+        // 9. Acesso ao trem
+        irPara("Catraca")
+        realizarPagamento()
+        seguirPara("Linha de trem")
+
+    FIMSE
+FIMSE
+
+FIM
